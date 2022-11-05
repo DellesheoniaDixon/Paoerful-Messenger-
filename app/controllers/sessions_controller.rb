@@ -12,7 +12,6 @@ class SessionsController < ApplicationController
     def destroy
         log_out if logged_in?
         session[:user_id] = nil
-        redirect_to :back
     end
 
 
