@@ -72,3 +72,7 @@ group :test do
 end
 
 gem 'sassc-rails'
+
+gem 'devise'
+
+gem 'simple_form'
