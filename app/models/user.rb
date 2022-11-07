@@ -7,6 +7,8 @@ class User < ApplicationRecord
     validates :username, uniqueness: true, presence: true
     validates_uniqueness_of :username
 
+    #has_secure_password
+
     scope :all_except, -> (user) {where.not(id: user)}
     
     has_many :messages

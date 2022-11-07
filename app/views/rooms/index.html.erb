@@ -1,15 +1,19 @@
 <div class="row">
+    <div class="col-12">
+        <%= render partial: 'shared/navigation_bar' %>
+    </div>
+
     <div class="col-md-2">
-        <h5> Welcome <%= @current_user.username %> </h5>
-        <%= button_to 'Logout', destroy_user_session_path, method: :delete %>
-        <h4> Users </h4>
+        <h5> Welcome, <%= @current_user.username %> </h5>
+        <h4> Users: </h4>
         <div>
             <%= turbo_stream_from "users" %>
             <div id="users">
                 <%= render @users %>
             </div>
         </div>
-        <h4> Rooms </h4>
+        <br/>
+        <h4> Rooms: </h4>
         <%= render partial: "layouts/new_room_form" %>
         <div>
             <%= turbo_stream_from "rooms" %>

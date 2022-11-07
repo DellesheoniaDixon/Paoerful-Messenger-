@@ -1,5 +1,23 @@
-<%= form_for (:session) do |f| %>
-    <%= f.label :username, 'Enter your username' %>
-    <%= f.text_field :username, autocomplete: 'off' %>
-    <%= f.submit 'Sign in' %>
-<% end %>
+<h2 class="col-md-4">Sign in</h2>
+
+<div class="col-md-4">
+    <%= form_for(:session, data: {turbo: false}) do |f| %>
+        
+        <div class="field">
+            <%= f.label :username %><br />
+            <%= f.text_field :username, required: true %>
+        </div>
+
+        <div class="field">
+            <%= f.label :password %><br />
+            <%= f.password_field :password, autocomplete: "current-password" %>
+        </div>
+
+        <div class="actions">
+            <%= f.submit "Log in" %>
+        </div>
+
+        <%= link_to "Signup", signup_path %>
+
+    <% end %>
+</div>

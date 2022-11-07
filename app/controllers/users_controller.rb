@@ -21,4 +21,24 @@ class UsersController < ApplicationController
         "private_#{users[0].id}_#{users[1].id}"
     end
 
+    def resource_name
+        :user
+    end
+    helper_method :resource_name
+
+    def resource
+        @resource ||= User.new
+    end
+    helper_method :resource
+
+    def devise_mapping
+        @devise_mapping ||= devise.mappings[:user]
+    end
+    helper_method :devise_mapping
+
+    def resource_class
+        User
+    end
+    helper_method :resource_class
+
 end
