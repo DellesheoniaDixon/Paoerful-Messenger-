@@ -1,11 +1,12 @@
-<h2 class="col-md-4">Sign up</h2>
-
 <div class="col-md-4">
+
+    <h2>Sign up</h2>
+
     <%= form_with model: @user, url: signup_path, data: {turbo: false} do |f| %>
 
         <% if @user.errors.any? %>
             <div class="alert alert-danger">
-                <% @user.errors.full_messages do |messages| %>
+                <% for messages in @user.errors.full_messages do %>
                     <div> <%= messages %> </div>
                 <% end %>
             </div>

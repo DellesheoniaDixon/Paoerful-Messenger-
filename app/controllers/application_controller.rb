@@ -17,8 +17,13 @@ class ApplicationController < ActionController::Base
     helper_method :current_user
 
     def current_user
-        if session[:user_id]
+        user_exists = User.find_by_id(session[:user_id])
+
+        if user_exists && session[:user_id]
             @current_user = User.find(session[:user_id])
+        else
+            session.delete(:user_id)
+            @current_user = nil
         end
     end
 
