@@ -1,11 +1,18 @@
+.welcome {
+    background: #343a40;
+    padding: 5%;
+}
+
 .msg-form {
     position: fixed;
     bottom: 0;
-    width: 90%
+    width: 83%;
+    background-color: #343a40;
+    padding: 1%;
 }
 
 .col-md-10 {
-    height: 100vh;
+    height: 80vh;
     overflow: scroll;
 }
 
@@ -22,4 +29,19 @@
     margin-bottom: 10px;
     background-color: #555555 ;
     padding: 10px
+}
+
+.fixed-navbar {
+    //position: fixed;
+    z-index: 1000;
+    width: 100%;
+}
+
+.pad-index {
+    padding-top: 55px;
+}
+
+.pad-room-box {
+    padding-bottom: 50px;
+    margin-bottom: 3%;
 }
