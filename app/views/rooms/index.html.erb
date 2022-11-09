@@ -4,6 +4,7 @@
     </div>
 
     <div class="col-md-2">
+        <br/>
         <h5> Welcome, <%= @current_user.username %> </h5>
         <h4> Users: </h4>
         <div>
@@ -22,7 +23,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-10 bg-dark text-light">
+    <div class="pb-4 col-md-10 bg-dark text-light">
         <% if @single_room %>
             <h4 class="text-center"> <%= @user&.username || @single_room.name %> </h4>
             <%= turbo_stream_from @single_room %>
