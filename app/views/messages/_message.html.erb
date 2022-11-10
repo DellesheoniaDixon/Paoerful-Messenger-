@@ -6,7 +6,13 @@
       <h6 class="name"> <%= message.user.username %> </h6>
     <% end %>
     
-  <%= message.content %>
+    <%= message.content %>
+    <% if message.image.attached? %>
+      <%= image_tag message.image %>
+    <% end %>
+
   </div>
 
 </div>
+
+                
