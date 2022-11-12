@@ -1,11 +1,13 @@
 <div class="row">
-    <div class="col-12">
+
+    <div class="col-12 fixed-navbar">
         <%= render partial: 'shared/navigation_bar' %>
     </div>
 
     <div class="col-md-2">
         <br/>
         <h5> Welcome, <%= @current_user.username %> </h5>
+        <hr>
         <h4> Users: </h4>
         <div>
             <%= turbo_stream_from "users" %>
@@ -14,6 +16,7 @@
             </div>
         </div>
         <br/>
+        <hr>
         <h4> Rooms: </h4>
         <%= render partial: "layouts/new_room_form" %>
         <div>
@@ -23,7 +26,7 @@
             </div>
         </div>
     </div>
-    <div class="pb-4 col-md-10 bg-dark text-light">
+    <div class="pb-4 col-md-10 bg-dark text-light pad-room-box">
         <% if @single_room %>
             <h4 class="text-center"> <%= @user&.username || @single_room.name %> </h4>
             <%= turbo_stream_from @single_room %>
