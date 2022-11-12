@@ -4,9 +4,9 @@ class Message < ApplicationRecord
 
   before_create :confirm_participant
 
-  has_one_attached :image, :dependent => :destroy
-
   after_create_commit { broadcast_append_to self.room }
+
+  has_one_attached :image, :dependent => :destroy
 
   def confirm_participant
     if self.room.is_private
